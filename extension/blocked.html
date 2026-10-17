@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Site blocked</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="blocked.css">
+  <script type="module" src="blocked.js"></script>
+</head>
+<body>
+  <main class="card">
+    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="11" fill="#d93025"/>
+      <rect x="5.5" y="9.8" width="13" height="4.4" rx="1.1" fill="#fff"/>
+    </svg>
+    <h1 id="title">This site is blocked</h1>
+    <p id="host" class="host" hidden></p>
+    <p id="lead" class="lead">You added it to your block list to help you stay focused.</p>
+    <div class="actions">
+      <button id="back" class="btn" type="button">Go back</button>
+      <a id="continue" class="btn" hidden>Continue</a>
+    </div>
+  </main>
+</body>
+</html>

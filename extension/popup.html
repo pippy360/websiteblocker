@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Website Blocker</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="popup.css">
+  <script type="module" src="popup.js"></script>
+</head>
+<body>
+  <header class="header">
+    <svg class="logo" viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="11" fill="#d93025"/>
+      <rect x="5.5" y="9.8" width="13" height="4.4" rx="1.1" fill="#fff"/>
+    </svg>
+    <h1>Website Blocker</h1>
+  </header>
+
+  <section id="current" class="current" hidden aria-label="Current site">
+    <img id="current-icon" class="favicon" alt="">
+    <span id="current-host" class="host"></span>
+    <button id="block-current" class="btn" type="button">Block</button>
+    <span id="current-status" class="badge" hidden>Blocked</span>
+  </section>
+
+  <form id="add-form" class="add-form" autocomplete="off">
+    <input id="site-input" type="text" placeholder="Add a site, e.g. youtube.com"
+           spellcheck="false" autocapitalize="off" aria-label="Site to block">
+    <button class="btn" type="submit">Block</button>
+  </form>
+  <p id="message" class="message" role="status" aria-live="polite"></p>
+
+  <section aria-labelledby="list-heading">
+    <h2 id="list-heading">Blocked sites <span id="count" class="count"></span></h2>
+    <ul id="site-list" class="site-list"></ul>
+    <p id="empty" class="empty" hidden>No sites blocked yet.</p>
+  </section>
+
+  <template id="site-template">
+    <li class="site">
+      <img class="favicon" alt="">
+      <span class="host"></span>
+      <button class="remove" type="button">
+        <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+          <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </li>
+  </template>
+</body>
+</html>
